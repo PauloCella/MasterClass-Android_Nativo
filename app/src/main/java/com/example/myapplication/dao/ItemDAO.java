@@ -39,7 +39,7 @@ public class ItemDAO {
 
 
     public List<Item> buscar(String nome){
-        Cursor cursor = db.query("ITEM", null, null, new String[]{"%" + nome + "%", "%" + nome + "%"}, null, null, null, null);
+        Cursor cursor = db.query("ITEM", null, null, null,null, null, null, null);
         List<Item> itens = mapCursorToList(cursor);
         return itens;
     }
@@ -61,6 +61,4 @@ public class ItemDAO {
         System.gc();
         return itens;
     }
-
-
 }
